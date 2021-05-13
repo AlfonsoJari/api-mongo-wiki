@@ -8,7 +8,7 @@ function responseFormater(success, json, error = undefined){
 
 	return json;
 }
-
+const cors = require('cors');
 var express = require('express')
 var app = express();
 
@@ -30,6 +30,9 @@ var Sensor = require('./app/models/sensor');
 
 var port = process.env.PORT || 8082;
 mongoose.connect(config.database);
+
+app.use(cors());
+app.options('*', cors());
 
 app.set('superSecret', config.secret);
 
@@ -144,7 +147,7 @@ apiRoutes.post('/login', function (req, res) {
 				// user and password is right
 				var id = user._id.toString();
 				var token = jwt.sign( {uid : id}, app.get('superSecret'), {
-					expiresIn: 20 * 60
+					expiresIn : 60 * 60
 				});
 
 				// return the information including token as JSON

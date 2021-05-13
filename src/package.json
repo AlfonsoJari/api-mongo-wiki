@@ -3,6 +3,7 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "latest",
+    "cors": "^2.8.5",
     "express": "latest",
     "gridfs-stream": "^1.1.1",
     "jsonwebtoken": "latest",
