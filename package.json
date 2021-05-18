@@ -16,5 +16,9 @@
   },
   "scripts": {
     "dev": "nodemon server.js"
+  },
+  "engines": {
+    "node" : "10.x"
   }
+  
 }
