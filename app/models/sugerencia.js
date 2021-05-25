@@ -5,11 +5,8 @@ var Schema = mongoose.Schema;
 // set up a mongoose model and pass it using
 // module.exports
 
-module.exports = mongoose.model('Sugerencias', new Schema({
- name: String,
- description: String,
- owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
- },
+module.exports = mongoose.model('Sugerencia', new Schema({
+ author: String,
+ titulo: String,
+ desc: String,
 }));
